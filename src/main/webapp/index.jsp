@@ -1,13 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JSP - Hello World</title>
-</head>
+<html>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+<h2>
+    home
+</h2>
+
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="${pageContext.request.contextPath}/action/login">Login</a>
+<br/>
+<a href="${pageContext.request.contextPath}/action/registration">Registration form</a>
+<br>
+<a href="${pageContext.request.contextPath}/action/exception">Exception</a>
+
 </body>
 </html>
