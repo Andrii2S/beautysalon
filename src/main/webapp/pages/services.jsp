@@ -12,7 +12,19 @@
 </head>
 <body>
 <jsp:include page="/commons/menu.jsp"></jsp:include>
-
-
+<table>
+    <tr>
+        <th><fmt:message key="service.name"/></th>
+        <th><fmt:message key="service.description"/></th>
+        <th><fmt:message key="service.time_taken"/></th>
+    </tr>
+    <c:forEach var="item" items="${services}">
+        <tr>
+            <th>${item.name}</th>
+            <th>${item.description}</th>
+            <th>${item.time}</th>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

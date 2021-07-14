@@ -14,5 +14,19 @@
 <jsp:include page="/commons/menu.jsp"></jsp:include>
 
 
+<table>
+    <tr>
+        <th><fmt:message key="master.name" /></th>
+        <th><fmt:message key="master.description" /></th>
+        <th><fmt:message key="master.rating" /></th>
+    </tr>
+    <c:forEach var="item" items="${masters}">
+        <tr>
+            <th>${item.name}</th>
+            <th>${item.information}</th>
+            <th>${item.rating}</th>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

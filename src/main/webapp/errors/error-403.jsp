@@ -13,6 +13,10 @@
 <body>
 <jsp:include page="/commons/menu.jsp"></jsp:include>
 
-
+<h2>
+    403
+    <br>
+    <fmt:message key="error.403" />
+</h2>
 </body>
 </html>

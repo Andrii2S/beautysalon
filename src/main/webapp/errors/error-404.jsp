@@ -12,7 +12,11 @@
 </head>
 <body>
 <jsp:include page="/commons/menu.jsp"></jsp:include>
-
+<h2>
+    404
+    <br>
+    <fmt:message key="error.404" />
+</h2>
 
 </body>
 </html>

@@ -2,11 +2,12 @@ package com.andriiskachko.finalproject.beautysalon.controller.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
     Command interface
  */
 
 public interface Command {
-    String execute(HttpServletRequest request, HttpServletResponse response);
+    Map<String, Object> execute(HttpServletRequest request, HttpServletResponse response);
 }

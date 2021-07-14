@@ -12,7 +12,10 @@
 </head>
 <body>
 <jsp:include page="/commons/menu.jsp"></jsp:include>
-
-
+<h2>
+    500
+    <br>
+    <fmt:message key="error.500" />
+</h2>
 </body>
 </html>

@@ -1,4 +1,5 @@
 package com.andriiskachko.finalproject.beautysalon.db;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +16,7 @@ public class PooledDataSource {
         try {
             basicDS = new BasicDataSource();
             Properties properties = new Properties();
-            InputStream inputStream = new FileInputStream("src/main/resources/db.properties");
+            InputStream inputStream = new FileInputStream("C:\\Users\\Andrii\\IdeaProjects\\beautysalon\\src\\main\\resources\\db.properties");
             properties.load(inputStream);
             basicDS.setDriverClassName(properties.getProperty("DRIVER_CLASS")); //loads the jdbc driver
             basicDS.setUrl(properties.getProperty("DB_CONNECTION_URL"));
@@ -34,9 +35,31 @@ public class PooledDataSource {
     }
 
     public static Connection getConnection() throws SQLException {
-        return basicDS.getConnection();
+        Connection con = basicDS.getConnection();
+        con.setAutoCommit(false);
+        return con;
     }
+
     public static DataSource getDataSource() {
         return basicDS;
     }
+
+    public static void commitAndClose(Connection con) {
+        try {
+            con.commit();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void rollbackAndClose(Connection con) {
+        try {
+            con.rollback();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

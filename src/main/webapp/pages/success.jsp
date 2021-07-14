@@ -12,7 +12,7 @@
 </head>
 <body>
 <jsp:include page="/commons/menu.jsp"></jsp:include>
-
-
+<h2>
+    <fmt:message key="success"/>
+</h2>
 </body>
-</html>

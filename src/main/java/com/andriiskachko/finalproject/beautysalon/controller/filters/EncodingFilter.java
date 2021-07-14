@@ -15,7 +15,7 @@ public class EncodingFilter implements Filter {
         servletResponse.setCharacterEncoding(DEFAULT_ENCODING);
         servletRequest.setCharacterEncoding(DEFAULT_ENCODING);
 
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
 }
